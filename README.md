@@ -21,17 +21,6 @@ A responsive, accessible profile card built with HTML, CSS, and vanilla JavaScri
 
 That's it! No build process needed.
 
-## Testing
-
-All elements have `data-testid` attributes:
-- `test-profile-card` - Root container
-- `test-user-name` - Name
-- `test-user-bio` - Biography
-- `test-user-time` - Current time (milliseconds)
-- `test-user-avatar` - Avatar image
-- `test-user-social-links` - Social links
-- `test-user-hobbies` - Hobbies list
-- `test-user-dislikes` - Dislikes list
 
 ## Deployment
 
