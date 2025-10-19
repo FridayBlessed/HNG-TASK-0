@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+    <title>Profile Card</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <article class="profile-card" data-testid="test-profile-card">
+        <header class="card-header">
+            <figure class="avatar-container">
+                <img 
+                    src= "Blessed.jpg"
+                    alt="FridayBlessed profile picture"
+                    data-testid="test-user-avatar"
+                    id="avatarImage"
+                >
+            </figure>
+            <h1 class="user-name" data-testid="test-user-name">Friday Blessed</h1>
+        </header>
+
+        <div class="card-body">
+            <section class="bio-section">
+                <p class="bio-text" data-testid="test-user-bio">
+                  I'm a passionate front-end developer with a strong eye for design and user experience. With over 2 years of experience in building beautiful, functional websites, I strive to create digital experiences that are both visually appealing and user-friendly.
+
+                  My expertise includes HTML, CSS, JavaScript, and React. I'm always learning and expanding my skill set to stay current with the latest web technologies and design trends.    
+                </p>
+                <div>
+                    <strong>Current Time: </strong>
+                    <span class="time-display" data-testid="test-user-time" id="currentTime"></span>
+                </div>
+            </section>
+
+            <nav class="social-section" aria-label="Social media links">
+                <h2 class="section-title">
+                    <span aria-hidden="true">🔗</span>
+                    Connect With Me
+                </h2>
+                <ul class="social-links" data-testid="test-user-social-links">
+                    <li>
+                        <a 
+                            href="https://twitter.com/FridayyBlessed" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="social-link"
+                            data-testid="test-user-social-twitter"
+                        >
+                            <span aria-hidden="true"><i class="fa-brands fa-twitter"></i></span>
+                            Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://github.com/FridayBlessed" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="social-link"
+                            data-testid="test-user-social-github"
+                        >
+                            <span aria-hidden="true"><i class="fab fa-github"></i></span>
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href=https://www.linkedin.com/in/friday-blessed-chigozirim-34a026262
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="social-link"
+                            data-testid="test-user-social-linkedin"
+                        >
+                            <span aria-hidden="true"><i class="fab fa-linkedin"></i></span>
+                            LinkedIn
+                        </a>
+                    </li>
+                      
+                </ul>
+            </nav>
+
+            <section class="info-section hobbies-section">
+                <h2 class="section-title">
+                    <span aria-hidden="true"><i class="fa-solid fa-heart"></i></span>
+                    Hobbies & Interests
+                </h2>
+                <ul class="info-list" data-testid="test-user-hobbies">
+                    <li class="info-item">Reading</li>
+                    <li class="info-item">Watching Movies</li>
+                    <li class="info-item">Traveling</li>
+                    <li class="info-item">Hiking & Nature Walks</li>
+                </ul>
+            </section>
+
+            <section class="info-section dislikes-section">
+                <h2 class="section-title">
+                    <span aria-hidden="true">👎</span>
+                    Not a Fan Of
+                </h2>
+                <ul class="info-list" data-testid="test-user-dislikes">
+                    <li class="info-item">Rush Hour Traffic</li>
+                    <li class="info-item">Cold Coffee</li>
+                    <li class="info-item">Poorly Written Documentation</li>
+                    <li class="info-item">Noisy Neighbors</li>
+                </ul>
+            </section>
+        </div>
+    </article>
+
+    <script>
+        // Update current time in milliseconds
+        function updateTime() {
+            const timeElement = document.getElementById('currentTime');
+            if (timeElement) {
+                timeElement.textContent = Date.now();
+            }
+        }
+
+        // Initialize time display
+        updateTime();
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+
+        // Optional: Image upload functionality
+        // You can add a file input to allow avatar changes
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const avatarImage = document.getElementById('avatarImage');
+                    avatarImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Accessibility: Announce time updates to screen readers (optional)
+        const timeElement = document.getElementById('currentTime');
+        if (timeElement) {
+            timeElement.setAttribute('aria-live', 'polite');
+            timeElement.setAttribute('aria-atomic', 'true');
+        }
+
+        // Log initialization for debugging
+        console.log('Profile Card initialized at:', Date.now());
+        console.log('All required data-testid attributes are present');
+    </script>
+</body>
+</html>
