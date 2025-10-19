@@ -35,10 +35,6 @@ All elements have `data-testid` attributes:
 
 ## Deployment
 
-**Netlify:** Drag and drop folder to [netlify.com/drop](https://app.netlify.com/drop)
 
 **GitHub Pages:** Push to GitHub → Settings → Pages → Select main branch
 
-## License
-
-MIT
