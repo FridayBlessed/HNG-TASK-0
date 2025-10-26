@@ -25,5 +25,5 @@ That's it! No build process needed.
 ## Deployment
 
 
-**GitHub Pages:** Push to GitHub → Settings → Pages → Select main branch
+**GitHub Pages:** Vercel
 
