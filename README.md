@@ -24,6 +24,5 @@ That's it! No build process needed.
 
 ## Deployment
 
-
-**GitHub Pages:** Vercel
+ Vercel
 
