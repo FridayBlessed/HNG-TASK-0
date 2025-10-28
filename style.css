@@ -74,7 +74,7 @@ header{
 
 .profile-card:hover{
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgna(255, 255, 255,  0.4);
+    box-shadow: 0 8px 20px rgba(255, 255, 255,  0.4);
 }
 
 .profile-card figure{
